@@ -15,7 +15,7 @@
     <!-- Header -->
     <header class="text-center mb-12">
       <h1 class="text-5xl font-serif font-bold text-amber-900 mb-2">☕ Coffee Recipes AI</h1>
-      <p class="text-lg text-stone-600">Analiza tu café y receta con Visión IA. Optimiza la extracción organoléptica.</p>
+      <p class="text-lg text-stone-600">Sube o toma fotos de tu café y receta.</p>
       <p class="text-sm text-amber-700 mt-2">Repositorio: S3ebaz/coffee-recipes</p>
     </header>
 
@@ -42,32 +42,6 @@
           <button class="select-btn px-4 py-2 bg-amber-700 text-white rounded-lg text-sm" data-target="recipeCamera">Tomar Foto</button>
         </div>
         <img id="recipePreview" class="mt-4 mx-auto max-h-48 rounded-lg shadow hidden">
-      </div>
-    </section>
-
-    <!-- Analyze Button -->
-    <div class="text-center mb-8">
-      <button id="analyzeBtn" class="px-8 py-4 bg-gradient-to-r from-amber-700 to-orange-700 text-white text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition disabled:opacity-50">
-        🔍 Analizar con Visión IA
-      </button>
-      <div id="loading" class="hidden mt-4 text-amber-700">Analizando imágenes... <span class="animate-pulse">☕</span></div>
-    </div>
-
-    <!-- Results -->
-    <section id="results" class="hidden space-y-6">
-      <div class="bg-white rounded-2xl shadow-lg p-6 border border-amber-200">
-        <h2 class="text-2xl font-serif text-amber-900 mb-4">📋 Ficha Técnica</h2>
-        <div id="techSheet" class="prose max-w-none text-stone-700"></div>
-      </div>
-      <div class="bg-white rounded-2xl shadow-lg p-6 border border-amber-200">
-        <h2 class="text-2xl font-serif text-amber-900 mb-4">✨ Receta Optimizada</h2>
-        <div id="optimizedRecipe" class="prose max-w-none text-stone-700"></div>
-      </div>
-      <div class="text-center">
-        <button id="publishBtn" class="px-8 py-4 bg-green-700 text-white text-lg font-semibold rounded-xl shadow-lg hover:bg-green-800 transition">
-          🚀 Publicar Receta en GitHub
-        </button>
-        <div id="publishStatus" class="mt-4 text-sm"></div>
       </div>
     </section>
   </div>
