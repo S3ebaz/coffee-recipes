@@ -1,0 +1,86 @@
+/* Custom styles for Coffee Recipes AI - Barista theme */
+
+:root {
+  --coffee-dark: #3c2415;
+  --coffee-medium: #6f4e37;
+  --cream: #f5f0e6;
+  --gold: #d4af37;
+}
+
+body {
+  font-family: 'Inter', system_ui, sans-serif;
+  background-attachment: fixed;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.upload-zone {
+  transition: all 0.3s ease;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-zone.dragover {
+  border-color: var(--gold);
+  background-color: #fff8e7;
+  transform: scale(1.02);
+}
+
+.select-btn {
+  transition: all 0.2s ease;
+}
+
+.select-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(180, 83, 9, 0.3);
+}
+
+#analyzeBtn, #publishBtn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.prose h3 {
+  color: var(--coffee-dark);
+  font-family: 'Playfair Display', serif;
+  margin-top: 1.5rem;
+}
+
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+#techSheet, #optimizedRecipe {
+  line-height: 1.7;
+}
+
+.alert-success {
+  background: #d1fae5;
+  color: #065f46;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #a7f3d0;
+}
+
+.alert-error {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #fecaca;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
