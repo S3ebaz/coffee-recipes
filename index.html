@@ -23,16 +23,24 @@
     <section class="grid md:grid-cols-2 gap-6 mb-8">
       <div class="upload-zone border-2 border-dashed border-amber-400 rounded-2xl p-6 text-center bg-white/70 hover:bg-amber-50 transition" id="packagingZone">
         <h3 class="font-serif text-xl text-amber-900 mb-2">📦 Empaque de Café</h3>
-        <p class="text-sm text-stone-600 mb-4">Arrastra o selecciona foto del empaque (marca, tueste, origen, notas)</p>
+        <p class="text-sm text-stone-600 mb-4">Arrastra, selecciona o toma una foto del empaque</p>
         <input type="file" id="packagingInput" accept="image/*" class="hidden">
-        <button class="select-btn px-4 py-2 bg-amber-600 text-white rounded-lg">Seleccionar Foto</button>
+        <input type="file" id="packagingCamera" accept="image/*" capture="environment" class="hidden">
+        <div class="flex flex-col sm:flex-row gap-2 justify-center">
+          <button class="select-btn px-4 py-2 bg-amber-600 text-white rounded-lg text-sm" data-target="packagingInput">Seleccionar</button>
+          <button class="select-btn px-4 py-2 bg-amber-700 text-white rounded-lg text-sm" data-target="packagingCamera">Tomar Foto</button>
+        </div>
         <img id="packagingPreview" class="mt-4 mx-auto max-h-48 rounded-lg shadow hidden">
       </div>
       <div class="upload-zone border-2 border-dashed border-amber-400 rounded-2xl p-6 text-center bg-white/70 hover:bg-amber-50 transition" id="recipeZone">
         <h3 class="font-serif text-xl text-amber-900 mb-2">📝 Receta / Método Actual</h3>
-        <p class="text-sm text-stone-600 mb-4">Arrastra o selecciona foto de tu receta o setup de extracción</p>
+        <p class="text-sm text-stone-600 mb-4">Arrastra, selecciona o toma una foto de tu receta</p>
         <input type="file" id="recipeInput" accept="image/*" class="hidden">
-        <button class="select-btn px-4 py-2 bg-amber-600 text-white rounded-lg">Seleccionar Foto</button>
+        <input type="file" id="recipeCamera" accept="image/*" capture="environment" class="hidden">
+        <div class="flex flex-col sm:flex-row gap-2 justify-center">
+          <button class="select-btn px-4 py-2 bg-amber-600 text-white rounded-lg text-sm" data-target="recipeInput">Seleccionar</button>
+          <button class="select-btn px-4 py-2 bg-amber-700 text-white rounded-lg text-sm" data-target="recipeCamera">Tomar Foto</button>
+        </div>
         <img id="recipePreview" class="mt-4 mx-auto max-h-48 rounded-lg shadow hidden">
       </div>
     </section>
