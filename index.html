@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Recipes AI | S3ebaz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-amber-50 via-orange-50 to-stone-100 min-h-screen font-sans text-stone-800">
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <!-- Header -->
+    <header class="text-center mb-12">
+      <h1 class="text-5xl font-serif font-bold text-amber-900 mb-2">☕ Coffee Recipes AI</h1>
+      <p class="text-lg text-stone-600">Analiza tu café y receta con Visión IA. Optimiza la extracción organoléptica.</p>
+      <p class="text-sm text-amber-700 mt-2">Repositorio: S3ebaz/coffee-recipes</p>
+    </header>
+
+    <!-- Config Panel -->
+    <section id="config" class="bg-white/80 backdrop-blur rounded-2xl shadow-lg p-6 mb-8 border border-amber-200">
+      <h2 class="text-2xl font-serif text-amber-900 mb-4">⚙️ Configuración (localStorage)</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-stone-700 mb-1">GitHub Personal Access Token (PAT)</label>
+          <input type="password" id="githubToken" placeholder="ghp_..." class="w-full px-3 py-2 border border-amber-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent">
+          <p class="text-xs text-stone-500 mt-1">Scopes: repo (para escribir contents)</p>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-stone-700 mb-1">OpenAI API Key (GPT-4o Vision)</label>
+          <input type="password" id="openaiKey" placeholder="sk-..." class="w-full px-3 py-2 border border-amber-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent">
+        </div>
+      </div>
+      <button id="saveConfig" class="mt-4 px-6 py-2 bg-amber-700 text-white rounded-lg hover:bg-amber-800 transition">Guardar Configuración</button>
+      <span id="configStatus" class="ml-3 text-sm text-green-600"></span>
+    </section>
+
+    <!-- Upload Area -->
+    <section class="grid md:grid-cols-2 gap-6 mb-8">
+      <div class="upload-zone border-2 border-dashed border-amber-400 rounded-2xl p-6 text-center bg-white/70 hover:bg-amber-50 transition" id="packagingZone">
+        <h3 class="font-serif text-xl text-amber-900 mb-2">📦 Empaque de Café</h3>
+        <p class="text-sm text-stone-600 mb-4">Arrastra o selecciona foto del empaque (marca, tueste, origen, notas)</p>
+        <input type="file" id="packagingInput" accept="image/*" class="hidden">
+        <button class="select-btn px-4 py-2 bg-amber-600 text-white rounded-lg">Seleccionar Foto</button>
+        <img id="packagingPreview" class="mt-4 mx-auto max-h-48 rounded-lg shadow hidden">
+      </div>
+      <div class="upload-zone border-2 border-dashed border-amber-400 rounded-2xl p-6 text-center bg-white/70 hover:bg-amber-50 transition" id="recipeZone">
+        <h3 class="font-serif text-xl text-amber-900 mb-2">📝 Receta / Método Actual</h3>
+        <p class="text-sm text-stone-600 mb-4">Arrastra o selecciona foto de tu receta o setup de extracción</p>
+        <input type="file" id="recipeInput" accept="image/*" class="hidden">
+        <button class="select-btn px-4 py-2 bg-amber-600 text-white rounded-lg">Seleccionar Foto</button>
+        <img id="recipePreview" class="mt-4 mx-auto max-h-48 rounded-lg shadow hidden">
+      </div>
+    </section>
+
+    <!-- Analyze Button -->
+    <div class="text-center mb-8">
+      <button id="analyzeBtn" class="px-8 py-4 bg-gradient-to-r from-amber-700 to-orange-700 text-white text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition disabled:opacity-50">
+        🔍 Analizar con Visión IA
+      </button>
+      <div id="loading" class="hidden mt-4 text-amber-700">Analizando imágenes... <span class="animate-pulse">☕</span></div>
+    </div>
+
+    <!-- Results -->
+    <section id="results" class="hidden space-y-6">
+      <div class="bg-white rounded-2xl shadow-lg p-6 border border-amber-200">
+        <h2 class="text-2xl font-serif text-amber-900 mb-4">📋 Ficha Técnica</h2>
+        <div id="techSheet" class="prose max-w-none text-stone-700"></div>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg p-6 border border-amber-200">
+        <h2 class="text-2xl font-serif text-amber-900 mb-4">✨ Receta Optimizada</h2>
+        <div id="optimizedRecipe" class="prose max-w-none text-stone-700"></div>
+      </div>
+      <div class="text-center">
+        <button id="publishBtn" class="px-8 py-4 bg-green-700 text-white text-lg font-semibold rounded-xl shadow-lg hover:bg-green-800 transition">
+          🚀 Publicar Receta en GitHub
+        </button>
+        <div id="publishStatus" class="mt-4 text-sm"></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
